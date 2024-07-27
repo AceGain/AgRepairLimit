@@ -64,13 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgRepairLimit.cs" />
-    <Compile Include="Patch_BaseItemActionEntry.cs" />
-    <Compile Include="Patch_ItemActionEntryRepair.cs" />
-    <Compile Include="Patch_ItemValue.cs" />
-    <Compile Include="Patch_XUiC_MainMenu.cs" />
+    <Compile Include="HarmonyInject\Patch_BaseItemActionEntry.cs" />
+    <Compile Include="HarmonyInject\Patch_ItemActionEntryRepair.cs" />
+    <Compile Include="HarmonyInject\Patch_ItemValue.cs" />
+    <Compile Include="HarmonyInject\Patch_XUiC_MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Patch_XUiC_ItemInfoWindow.cs" />
-    <Compile Include="Patch_XUiC_RecipeStack.cs" />
+    <Compile Include="HarmonyInject\Patch_XUiC_ItemInfoWindow.cs" />
+    <Compile Include="HarmonyInject\Patch_XUiC_RecipeStack.cs" />
     <Compile Include="XUiC_InjectWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
