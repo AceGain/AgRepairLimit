@@ -20,7 +20,7 @@ public class AgRepairLimit : IModApi
             Log.Error("AceGame RepairLimit inject something, and needs to be restarted.");
             Log.Out("====================================================================================================");
             Application.Quit();
-            String path = Environment.CurrentDirectory + "\\startdedicated.bat";
+            string path = Environment.CurrentDirectory + "\\startdedicated.bat";
             System.Diagnostics.Process.Start(path);
             return;
         }
@@ -69,7 +69,7 @@ public class AgRepairLimit : IModApi
         TypeDefinition assemblyType = assemblyModule.GetType(nameof(PassiveEffects));
         foreach (FieldDefinition field in assemblyType.Fields)
         {
-            if (String.Equals(field.Name, "RepairLimit"))
+            if (string.Equals(field.Name, "RepairLimit"))
             {
                 hasField = true;
                 break;
@@ -90,7 +90,7 @@ public class AgRepairLimit : IModApi
         TypeDefinition assemblyType2 = assemblyModule.GetType(nameof(ItemValue));
         foreach (FieldDefinition field in assemblyType2.Fields)
         {
-            if (String.Equals(field.Name, "RepairTimes"))
+            if (string.Equals(field.Name, "RepairTimes"))
             {
                 hasField = true;
                 break;
@@ -111,11 +111,11 @@ public class AgRepairLimit : IModApi
         TypeDefinition assemblyType = assemblyModule.GetType(nameof(ItemActionEntryRepair));
         foreach (TypeDefinition type in assemblyType.NestedTypes)
         {
-            if (String.Equals(type.Name, "StateTypes"))
+            if (string.Equals(type.Name, "StateTypes"))
             {
                 foreach (FieldDefinition field in type.Fields)
                 {
-                    if (String.Equals(field.Name, "OverRepairLimit"))
+                    if (string.Equals(field.Name, "OverRepairLimit"))
                     {
                         hasField = true;
                         break;
@@ -139,11 +139,11 @@ public class AgRepairLimit : IModApi
         TypeDefinition assemblyType = assemblyModule.GetType(nameof(ItemActionEntryRepair));
         foreach (TypeDefinition type in assemblyType.NestedTypes)
         {
-            if (String.Equals(type.Name, "StateTypes"))
+            if (string.Equals(type.Name, "StateTypes"))
             {
                 foreach (FieldDefinition field in type.Fields)
                 {
-                    if (String.Equals(field.Name, "RepairDisable"))
+                    if (string.Equals(field.Name, "RepairDisable"))
                     {
                         hasField = true;
                         break;

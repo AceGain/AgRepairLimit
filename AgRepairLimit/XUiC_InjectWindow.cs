@@ -52,7 +52,7 @@ public class XUiC_InjectWindow : XUiController
     public void BtnExit_OnPressed(XUiController _sender, int _mouseButton)
     {
         Application.Quit();
-        String path = Environment.CurrentDirectory + "\\7DaysToDie.exe";
+        string path = Environment.CurrentDirectory + "\\7DaysToDie.exe";
         System.Diagnostics.Process.Start(path);
     }
 }
