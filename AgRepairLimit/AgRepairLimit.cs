@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 using UnityEngine;
 using FieldAttributes = Mono.Cecil.FieldAttributes;
 
@@ -17,13 +18,21 @@ public class AgRepairLimit : IModApi
         if (GameManager.IsDedicatedServer && toRestart)
         {
             Log.Out("====================================================================================================");
-            Log.Error("AceGame RepairLimit inject something, and needs to be restarted.");
+            Log.Error("AceGame RepairLimit has been successfully injected.");
+            Log.Error("The program needs to restart, and please restart later");
+            TimeSpan interval = new TimeSpan(0, 0, 1);
+            for (int i = 5; i > 0; i--)
+            {
+                Log.Error("Exit the program in {0} seconds.", i);
+                Thread.Sleep(interval);
+            }
             Log.Out("====================================================================================================");
             Application.Quit();
             string path = Environment.CurrentDirectory + "\\startdedicated.bat";
             System.Diagnostics.Process.Start(path);
             return;
         }
+
         this.HarmonyPatch();
     }
 
